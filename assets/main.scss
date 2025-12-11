@@ -908,6 +908,42 @@ body {
   gap: 16px !important;
 }
 
+/* Language Switcher */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.lang-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    color: var(--primary-color);
+    background: var(--bg-secondary);
+  }
+  
+  &:visited {
+    color: var(--text-secondary);
+  }
+}
+
+.lang-separator {
+  color: var(--text-muted);
+}
+
+.lang-current {
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 4px 8px;
+}
+
 /* Primary CTA Button - GitHub Primer style */
 .btn-primary {
   display: inline-flex;

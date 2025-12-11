@@ -2,7 +2,7 @@
 title: "AI Native Development Guide"
 description: "Master GitHub Copilot and Coding Agents through systematic Agent Primitives and Markdown Prompt Engineering"
 baseurl: "/awesome-ai-native"
-url: "https://danielmeppiel.github.io"
+url: "https://chunkai1312.github.io"
 
 # Build settings
 markdown: kramdown
@@ -75,6 +75,13 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+      nav_order: 1
+  - scope:
+      path: "zh-tw/docs"
+      type: "pages"
+    values:
+      layout: "docs"
+      lang: "zh-TW"
       nav_order: 1
   - scope:
       path: "_examples"

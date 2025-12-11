@@ -1,0 +1,121 @@
+# English navigation (default)
+en:
+  guide: "Guide"
+  core_concepts: "Core Concepts"
+  getting_started: "Getting Started"
+  tooling: "Tooling"
+  agent_delegation: "Agent Delegation"
+  team_adoption: "Team Adoption"
+  reference: "Reference"
+  examples: "Examples"
+  
+  # Core Concepts subsections
+  markdown_prompt_engineering: "Markdown Prompt Engineering"
+  agent_primitives: "Agent Primitives"
+  context_engineering: "Context Engineering"
+  agentic_workflows: "Agentic Workflows"
+  ai_native_framework: "AI Native Framework"
+  key_takeaways: "Key Takeaways"
+  
+  # Getting Started subsections
+  instructions_architecture: "A. Instructions Architecture"
+  chat_modes_configuration: "B. Chat Modes Configuration"
+  agentic_workflows_gs: "C. Agentic Workflows"
+  specification_templates: "D. Specification Templates"
+  context_organization: "E. Context Organization"
+  quick_start_checklist: "Quick Start Checklist"
+  
+  # Tooling subsections
+  natural_language_as_code: "Natural Language as Code"
+  agent_cli_runtimes: "Agent CLI Runtimes"
+  runtime_management: "Runtime Management"
+  distribution_and_packaging: "Distribution and Packaging"
+  production_deployment: "Production Deployment"
+  ecosystem_evolution: "Ecosystem Evolution"
+  
+  # Agent Delegation subsections
+  agentic_workflow_execution: "Agentic Workflow Execution Example"
+  execution_strategy: "Execution Strategy Selection"
+  local_ide_execution: "Local IDE Execution"
+  async_agent_delegation: "Async Agent Delegation"
+  progress_monitoring: "Progress Monitoring & Async Integration"
+  hybrid_orchestration: "Hybrid Orchestration Strategies"
+  tooling_enhanced: "Tooling-Enhanced Execution"
+  
+  # Team Adoption subsections
+  human_validation_gates: "Human Validation Gates"
+  team_scale_coordination: "Team-Scale Coordination"
+  knowledge_sharing: "Knowledge Sharing"
+  governance_compliance: "Governance & Compliance"
+  context_governance: "Context Governance at Scale"
+  implementation_roadmap: "Implementation Roadmap"
+  success_metrics: "Success Metrics"
+  
+  # Reference subsections
+  mastery_progression: "Mastery Progression"
+  paradigm_shift: "The Paradigm Shift"
+  documentation_references: "Documentation References"
+  quick_troubleshooting: "Quick Troubleshooting"
+  success_metrics_tracking: "Success Metrics Tracking"
+  next_steps: "Next Steps"
+
+# 繁體中文導覽
+zh-TW:
+  guide: "指南"
+  core_concepts: "核心概念"
+  getting_started: "快速開始"
+  tooling: "工具生態"
+  agent_delegation: "Agent 委派"
+  team_adoption: "團隊導入"
+  reference: "參考資料"
+  examples: "範例"
+  
+  # Core Concepts subsections
+  markdown_prompt_engineering: "Markdown Prompt Engineering"
+  agent_primitives: "Agent Primitives"
+  context_engineering: "Context Engineering"
+  agentic_workflows: "Agentic Workflows"
+  ai_native_framework: "AI Native 框架"
+  key_takeaways: "重點總結"
+  
+  # Getting Started subsections
+  instructions_architecture: "A. Instructions 架構"
+  chat_modes_configuration: "B. Chat Modes 設定"
+  agentic_workflows_gs: "C. Agentic Workflows"
+  specification_templates: "D. Specification Templates"
+  context_organization: "E. Context 組織"
+  quick_start_checklist: "快速開始清單"
+  
+  # Tooling subsections
+  natural_language_as_code: "自然語言即程式碼"
+  agent_cli_runtimes: "Agent CLI Runtimes"
+  runtime_management: "Runtime 管理"
+  distribution_and_packaging: "發佈與封裝"
+  production_deployment: "生產環境部署"
+  ecosystem_evolution: "生態系演進"
+  
+  # Agent Delegation subsections
+  agentic_workflow_execution: "Agentic Workflow 執行範例"
+  execution_strategy: "執行策略選擇"
+  local_ide_execution: "本地 IDE 執行"
+  async_agent_delegation: "非同步 Agent 委派"
+  progress_monitoring: "進度監控與非同步整合"
+  hybrid_orchestration: "混合編排策略"
+  tooling_enhanced: "工具增強執行"
+  
+  # Team Adoption subsections
+  human_validation_gates: "人工驗證關卡"
+  team_scale_coordination: "團隊規模協調"
+  knowledge_sharing: "知識分享"
+  governance_compliance: "治理與合規"
+  context_governance: "大規模 Context 治理"
+  implementation_roadmap: "實施路線圖"
+  success_metrics: "成功指標"
+  
+  # Reference subsections
+  mastery_progression: "精通進程"
+  paradigm_shift: "範式轉移"
+  documentation_references: "文件參考"
+  quick_troubleshooting: "快速疑難排解"
+  success_metrics_tracking: "成功指標追蹤"
+  next_steps: "下一步"

@@ -2,6 +2,14 @@
 layout: default
 ---
 
+{% assign current_lang = page.lang | default: 'en' %}
+{% assign nav = site.data.navigation[current_lang] | default: site.data.navigation['en'] %}
+{% if page.lang == 'zh-TW' %}
+  {% assign docs_base = '/zh-tw/docs/' %}
+{% else %}
+  {% assign docs_base = '/docs/' %}
+{% endif %}
+
 <div class="docs-layout">
   <aside id="docs-sidebar" class="docs-sidebar">
     <!-- Close button for mobile (Primer style) -->
@@ -18,8 +26,8 @@ layout: default
       <!-- Main Guide Section -->
       <div class="nav-section">
         <div class="nav-section-title">
-          <a href="{{ '/docs/' | relative_url }}" class="nav-main-link {% if page.url == '/docs/' %}current{% endif %}">
-            <span class="nav-text">Guide</span>
+          <a href="{{ docs_base | relative_url }}" class="nav-main-link {% if page.url == docs_base %}current{% endif %}">
+            <span class="nav-text">{{ nav.guide }}</span>
           </a>
         </div>
       </div>
@@ -34,17 +42,17 @@ layout: default
               <path d="M4.5 3L7.5 6L4.5 9"></path>
             </svg>
           </button>
-          <a href="{{ '/docs/concepts/' | relative_url }}" class="nav-main-link {% if page.url contains '/concepts/' %}current{% endif %}">
-            <span class="nav-text">Core Concepts</span>
+          <a href="{{ docs_base | append: 'concepts/' | relative_url }}" class="nav-main-link {% if page.url contains '/concepts/' %}current{% endif %}">
+            <span class="nav-text">{{ nav.core_concepts }}</span>
           </a>
         </div>
         <ul class="nav-subsection {% if page.url contains '/concepts/' %}expanded{% endif %}" id="concepts-section">
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#layer-1-markdown-prompt-engineering" class="nav-sub-link">Markdown Prompt Engineering</a></li>
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#layer-2-agent-primitives" class="nav-sub-link">Agent Primitives</a></li>
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#layer-3-context-engineering" class="nav-sub-link">Context Engineering</a></li>
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#agentic-workflows-the-complete-system-in-action" class="nav-sub-link">Agentic Workflows</a></li>
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#the-ai-native-development-framework" class="nav-sub-link">AI Native Framework</a></li>
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
+          <li><a href="{{ docs_base | append: 'concepts/' | relative_url }}#layer-1-markdown-prompt-engineering" class="nav-sub-link">{{ nav.markdown_prompt_engineering }}</a></li>
+          <li><a href="{{ docs_base | append: 'concepts/' | relative_url }}#layer-2-agent-primitives" class="nav-sub-link">{{ nav.agent_primitives }}</a></li>
+          <li><a href="{{ docs_base | append: 'concepts/' | relative_url }}#layer-3-context-engineering" class="nav-sub-link">{{ nav.context_engineering }}</a></li>
+          <li><a href="{{ docs_base | append: 'concepts/' | relative_url }}#agentic-workflows-the-complete-system-in-action" class="nav-sub-link">{{ nav.agentic_workflows }}</a></li>
+          <li><a href="{{ docs_base | append: 'concepts/' | relative_url }}#the-ai-native-development-framework" class="nav-sub-link">{{ nav.ai_native_framework }}</a></li>
+          <li><a href="{{ docs_base | append: 'concepts/' | relative_url }}#key-takeaways" class="nav-sub-link">{{ nav.key_takeaways }}</a></li>
         </ul>
       </div>
 
@@ -58,17 +66,17 @@ layout: default
               <path d="M4.5 3L7.5 6L4.5 9"></path>
             </svg>
           </button>
-          <a href="{{ '/docs/getting-started/' | relative_url }}" class="nav-main-link {% if page.url contains '/getting-started/' %}current{% endif %}">
-            <span class="nav-text">Getting Started</span>
+          <a href="{{ docs_base | append: 'getting-started/' | relative_url }}" class="nav-main-link {% if page.url contains '/getting-started/' %}current{% endif %}">
+            <span class="nav-text">{{ nav.getting_started }}</span>
           </a>
         </div>
         <ul class="nav-subsection {% if page.url contains '/getting-started/' %}expanded{% endif %}" id="getting-started-section">
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#a-instructions-architecture" class="nav-sub-link">A. Instructions Architecture</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#b-chat-modes-configuration" class="nav-sub-link">B. Chat Modes Configuration</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#c-agentic-workflows" class="nav-sub-link">C. Agentic Workflows</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#d-specification-templates" class="nav-sub-link">D. Specification Templates</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#e-context-organization--discovery" class="nav-sub-link">E. Context Organization</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#quick-start-checklist" class="nav-sub-link">Quick Start Checklist</a></li>
+          <li><a href="{{ docs_base | append: 'getting-started/' | relative_url }}#a-instructions-architecture" class="nav-sub-link">{{ nav.instructions_architecture }}</a></li>
+          <li><a href="{{ docs_base | append: 'getting-started/' | relative_url }}#b-chat-modes-configuration" class="nav-sub-link">{{ nav.chat_modes_configuration }}</a></li>
+          <li><a href="{{ docs_base | append: 'getting-started/' | relative_url }}#c-agentic-workflows" class="nav-sub-link">{{ nav.agentic_workflows_gs }}</a></li>
+          <li><a href="{{ docs_base | append: 'getting-started/' | relative_url }}#d-specification-templates" class="nav-sub-link">{{ nav.specification_templates }}</a></li>
+          <li><a href="{{ docs_base | append: 'getting-started/' | relative_url }}#e-context-organization--discovery" class="nav-sub-link">{{ nav.context_organization }}</a></li>
+          <li><a href="{{ docs_base | append: 'getting-started/' | relative_url }}#quick-start-checklist" class="nav-sub-link">{{ nav.quick_start_checklist }}</a></li>
         </ul>
       </div>
 
@@ -82,18 +90,18 @@ layout: default
               <path d="M4.5 3L7.5 6L4.5 9"></path>
             </svg>
           </button>
-          <a href="{{ '/docs/tooling/' | relative_url }}" class="nav-main-link {% if page.url contains '/tooling/' %}current{% endif %}">
-            <span class="nav-text">Tooling</span>
+          <a href="{{ docs_base | append: 'tooling/' | relative_url }}" class="nav-main-link {% if page.url contains '/tooling/' %}current{% endif %}">
+            <span class="nav-text">{{ nav.tooling }}</span>
           </a>
         </div>
         <ul class="nav-subsection {% if page.url contains '/tooling/' %}expanded{% endif %}" id="tooling-section">
-          <li><a href="{{ '/docs/tooling/' | relative_url }}#natural-language-as-code" class="nav-sub-link">Natural Language as Code</a></li>
-          <li><a href="{{ '/docs/tooling/' | relative_url }}#agent-cli-runtimes" class="nav-sub-link">Agent CLI Runtimes</a></li>
-          <li><a href="{{ '/docs/tooling/' | relative_url }}#runtime-management" class="nav-sub-link">Runtime Management</a></li>
-          <li><a href="{{ '/docs/tooling/' | relative_url }}#distribution-and-packaging" class="nav-sub-link">Distribution and Packaging</a></li>
-          <li><a href="{{ '/docs/tooling/' | relative_url }}#production-deployment" class="nav-sub-link">Production Deployment</a></li>
-          <li><a href="{{ '/docs/tooling/' | relative_url }}#ecosystem-evolution" class="nav-sub-link">Ecosystem Evolution</a></li>
-          <li><a href="{{ '/docs/tooling/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
+          <li><a href="{{ docs_base | append: 'tooling/' | relative_url }}#natural-language-as-code" class="nav-sub-link">{{ nav.natural_language_as_code }}</a></li>
+          <li><a href="{{ docs_base | append: 'tooling/' | relative_url }}#agent-cli-runtimes" class="nav-sub-link">{{ nav.agent_cli_runtimes }}</a></li>
+          <li><a href="{{ docs_base | append: 'tooling/' | relative_url }}#runtime-management" class="nav-sub-link">{{ nav.runtime_management }}</a></li>
+          <li><a href="{{ docs_base | append: 'tooling/' | relative_url }}#distribution-and-packaging" class="nav-sub-link">{{ nav.distribution_and_packaging }}</a></li>
+          <li><a href="{{ docs_base | append: 'tooling/' | relative_url }}#production-deployment" class="nav-sub-link">{{ nav.production_deployment }}</a></li>
+          <li><a href="{{ docs_base | append: 'tooling/' | relative_url }}#ecosystem-evolution" class="nav-sub-link">{{ nav.ecosystem_evolution }}</a></li>
+          <li><a href="{{ docs_base | append: 'tooling/' | relative_url }}#key-takeaways" class="nav-sub-link">{{ nav.key_takeaways }}</a></li>
         </ul>
       </div>
 
@@ -107,19 +115,19 @@ layout: default
               <path d="M4.5 3L7.5 6L4.5 9"></path>
             </svg>
           </button>
-          <a href="{{ '/docs/agent-delegation/' | relative_url }}" class="nav-main-link {% if page.url contains '/agent-delegation/' %}current{% endif %}">
-            <span class="nav-text">Agent Delegation</span>
+          <a href="{{ docs_base | append: 'agent-delegation/' | relative_url }}" class="nav-main-link {% if page.url contains '/agent-delegation/' %}current{% endif %}">
+            <span class="nav-text">{{ nav.agent_delegation }}</span>
           </a>
         </div>
         <ul class="nav-subsection {% if page.url contains '/agent-delegation/' %}expanded{% endif %}" id="agent-delegation-section">
-          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#agentic-workflow-execution-example" class="nav-sub-link">Agentic Workflow Execution Example</a></li>
-          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#a-execution-strategy-selection" class="nav-sub-link">Execution Strategy Selection</a></li>
-          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#b-local-ide-execution" class="nav-sub-link">Local IDE Execution</a></li>
-          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#c-async-agent-delegation" class="nav-sub-link">Async Agent Delegation</a></li>
-          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#d-progress-monitoring--async-integration" class="nav-sub-link">Progress Monitoring & Async Integration</a></li>
-          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#e-hybrid-orchestration-strategies" class="nav-sub-link">Hybrid Orchestration Strategies</a></li>
-          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#f-tooling-enhanced-execution" class="nav-sub-link">Tooling-Enhanced Execution</a></li>
-          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
+          <li><a href="{{ docs_base | append: 'agent-delegation/' | relative_url }}#agentic-workflow-execution-example" class="nav-sub-link">{{ nav.agentic_workflow_execution }}</a></li>
+          <li><a href="{{ docs_base | append: 'agent-delegation/' | relative_url }}#a-execution-strategy-selection" class="nav-sub-link">{{ nav.execution_strategy }}</a></li>
+          <li><a href="{{ docs_base | append: 'agent-delegation/' | relative_url }}#b-local-ide-execution" class="nav-sub-link">{{ nav.local_ide_execution }}</a></li>
+          <li><a href="{{ docs_base | append: 'agent-delegation/' | relative_url }}#c-async-agent-delegation" class="nav-sub-link">{{ nav.async_agent_delegation }}</a></li>
+          <li><a href="{{ docs_base | append: 'agent-delegation/' | relative_url }}#d-progress-monitoring--async-integration" class="nav-sub-link">{{ nav.progress_monitoring }}</a></li>
+          <li><a href="{{ docs_base | append: 'agent-delegation/' | relative_url }}#e-hybrid-orchestration-strategies" class="nav-sub-link">{{ nav.hybrid_orchestration }}</a></li>
+          <li><a href="{{ docs_base | append: 'agent-delegation/' | relative_url }}#f-tooling-enhanced-execution" class="nav-sub-link">{{ nav.tooling_enhanced }}</a></li>
+          <li><a href="{{ docs_base | append: 'agent-delegation/' | relative_url }}#key-takeaways" class="nav-sub-link">{{ nav.key_takeaways }}</a></li>
         </ul>
       </div>
 
@@ -133,19 +141,19 @@ layout: default
               <path d="M4.5 3L7.5 6L4.5 9"></path>
             </svg>
           </button>
-          <a href="{{ '/docs/team-adoption/' | relative_url }}" class="nav-main-link {% if page.url contains '/team-adoption/' %}current{% endif %}">
-            <span class="nav-text">Team Adoption</span>
+          <a href="{{ docs_base | append: 'team-adoption/' | relative_url }}" class="nav-main-link {% if page.url contains '/team-adoption/' %}current{% endif %}">
+            <span class="nav-text">{{ nav.team_adoption }}</span>
           </a>
         </div>
         <ul class="nav-subsection {% if page.url contains '/team-adoption/' %}expanded{% endif %}" id="team-adoption-section">
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#a-human-validation-gates--review-processes" class="nav-sub-link">Human Validation Gates</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#b-team-scale-multi-agent-coordination" class="nav-sub-link">Team-Scale Coordination</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#c-knowledge-sharing--team-intelligence-patterns" class="nav-sub-link">Knowledge Sharing</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#d-governance--compliance-framework" class="nav-sub-link">Governance & Compliance</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#e-context-governance-at-scale" class="nav-sub-link">Context Governance at Scale</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#implementation-roadmap" class="nav-sub-link">Implementation Roadmap</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#success-metrics" class="nav-sub-link">Success Metrics</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
+          <li><a href="{{ docs_base | append: 'team-adoption/' | relative_url }}#a-human-validation-gates--review-processes" class="nav-sub-link">{{ nav.human_validation_gates }}</a></li>
+          <li><a href="{{ docs_base | append: 'team-adoption/' | relative_url }}#b-team-scale-multi-agent-coordination" class="nav-sub-link">{{ nav.team_scale_coordination }}</a></li>
+          <li><a href="{{ docs_base | append: 'team-adoption/' | relative_url }}#c-knowledge-sharing--team-intelligence-patterns" class="nav-sub-link">{{ nav.knowledge_sharing }}</a></li>
+          <li><a href="{{ docs_base | append: 'team-adoption/' | relative_url }}#d-governance--compliance-framework" class="nav-sub-link">{{ nav.governance_compliance }}</a></li>
+          <li><a href="{{ docs_base | append: 'team-adoption/' | relative_url }}#e-context-governance-at-scale" class="nav-sub-link">{{ nav.context_governance }}</a></li>
+          <li><a href="{{ docs_base | append: 'team-adoption/' | relative_url }}#implementation-roadmap" class="nav-sub-link">{{ nav.implementation_roadmap }}</a></li>
+          <li><a href="{{ docs_base | append: 'team-adoption/' | relative_url }}#success-metrics" class="nav-sub-link">{{ nav.success_metrics }}</a></li>
+          <li><a href="{{ docs_base | append: 'team-adoption/' | relative_url }}#key-takeaways" class="nav-sub-link">{{ nav.key_takeaways }}</a></li>
         </ul>
       </div>
 
@@ -159,18 +167,18 @@ layout: default
               <path d="M4.5 3L7.5 6L4.5 9"></path>
             </svg>
           </button>
-          <a href="{{ '/docs/reference/' | relative_url }}" class="nav-main-link {% if page.url contains '/reference/' %}current{% endif %}">
-            <span class="nav-text">Reference</span>
+          <a href="{{ docs_base | append: 'reference/' | relative_url }}" class="nav-main-link {% if page.url contains '/reference/' %}current{% endif %}">
+            <span class="nav-text">{{ nav.reference }}</span>
           </a>
         </div>
         <ul class="nav-subsection {% if page.url contains '/reference/' %}expanded{% endif %}" id="reference-section">
-          <li><a href="{{ '/docs/reference/' | relative_url }}#quick-start-checklist" class="nav-sub-link">Quick Start Checklist</a></li>
-          <li><a href="{{ '/docs/reference/' | relative_url }}#mastery-progression" class="nav-sub-link">Mastery Progression</a></li>
-          <li><a href="{{ '/docs/reference/' | relative_url }}#the-paradigm-shift" class="nav-sub-link">The Paradigm Shift</a></li>
-          <li><a href="{{ '/docs/reference/' | relative_url }}#documentation-references" class="nav-sub-link">Documentation References</a></li>
-          <li><a href="{{ '/docs/reference/' | relative_url }}#quick-troubleshooting" class="nav-sub-link">Quick Troubleshooting</a></li>
-          <li><a href="{{ '/docs/reference/' | relative_url }}#success-metrics-tracking" class="nav-sub-link">Success Metrics Tracking</a></li>
-          <li><a href="{{ '/docs/reference/' | relative_url }}#next-steps" class="nav-sub-link">Next Steps</a></li>
+          <li><a href="{{ docs_base | append: 'reference/' | relative_url }}#quick-start-checklist" class="nav-sub-link">{{ nav.quick_start_checklist }}</a></li>
+          <li><a href="{{ docs_base | append: 'reference/' | relative_url }}#mastery-progression" class="nav-sub-link">{{ nav.mastery_progression }}</a></li>
+          <li><a href="{{ docs_base | append: 'reference/' | relative_url }}#the-paradigm-shift" class="nav-sub-link">{{ nav.paradigm_shift }}</a></li>
+          <li><a href="{{ docs_base | append: 'reference/' | relative_url }}#documentation-references" class="nav-sub-link">{{ nav.documentation_references }}</a></li>
+          <li><a href="{{ docs_base | append: 'reference/' | relative_url }}#quick-troubleshooting" class="nav-sub-link">{{ nav.quick_troubleshooting }}</a></li>
+          <li><a href="{{ docs_base | append: 'reference/' | relative_url }}#success-metrics-tracking" class="nav-sub-link">{{ nav.success_metrics_tracking }}</a></li>
+          <li><a href="{{ docs_base | append: 'reference/' | relative_url }}#next-steps" class="nav-sub-link">{{ nav.next_steps }}</a></li>
         </ul>
       </div>
 
@@ -178,7 +186,7 @@ layout: default
       <div class="nav-section">
         <div class="nav-section-title">
           <a href="{{ '/examples/' | relative_url }}" class="nav-main-link {% if page.url contains '/examples/' %}current{% endif %}">
-            <span class="nav-text">Examples</span>
+            <span class="nav-text">{{ nav.examples }}</span>
           </a>
         </div>
       </div>

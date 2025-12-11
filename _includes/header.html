@@ -16,8 +16,23 @@
         </button>
       {% endif %}
             
+      <!-- Language Switcher -->
+      <div class="language-switcher">
+        {% if page.lang == 'zh-TW' %}
+          {% assign en_url = page.url | replace: '/zh-tw', '' %}
+          <a href="{{ en_url | relative_url }}" class="lang-link" aria-label="Switch to English">EN</a>
+          <span class="lang-separator">|</span>
+          <span class="lang-current">繁中</span>
+        {% else %}
+          <span class="lang-current">EN</span>
+          <span class="lang-separator">|</span>
+          {% assign zh_url = '/zh-tw' | append: page.url %}
+          <a href="{{ zh_url | relative_url }}" class="lang-link" aria-label="切換至繁體中文">繁中</a>
+        {% endif %}
+      </div>
+      
       <!-- GitHub Contribute Button -->
-      <a href="https://github.com/danielmeppiel/awesome-ai-native" 
+      <a href="https://github.com/chunkai1312/awesome-ai-native" 
          class="github-btn" 
          target="_blank" 
          rel="noopener noreferrer"
